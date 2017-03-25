@@ -1,0 +1,166 @@
+<html>
+<head>
+<title>Naughts and Crosses</title>
+<script>
+var token = "X";
+function addToken(input) {
+if (token === "X" && document.getElementById(input).innerHTML === "") {
+document.getElementById(input).innerHTML = "<span class='red big corbel'>X</span>";
+token = "O";
+checkWin();
+}
+else if (token === "O" && document.getElementById(input).innerHTML === "") {
+document.getElementById(input).innerHTML = "<span class='blue big corbel'>O</span>";
+token = "X";
+checkWin();
+}
+}
+function reset() {
+document.getElementById("box-one").innerHTML = "";
+document.getElementById("box-two").innerHTML = "";
+document.getElementById("box-three").innerHTML = "";
+document.getElementById("box-four").innerHTML = "";
+document.getElementById("box-five").innerHTML = "";
+document.getElementById("box-six").innerHTML = "";
+document.getElementById("box-seven").innerHTML = "";
+document.getElementById("box-eight").innerHTML = "";
+document.getElementById("box-nine").innerHTML = "";
+document.getElementById("box-one").style.backgroundColor = "white";
+document.getElementById("box-two").style.backgroundColor = "white";
+document.getElementById("box-three").style.backgroundColor = "white";
+document.getElementById("box-four").style.backgroundColor = "white";
+document.getElementById("box-five").style.backgroundColor = "white";
+document.getElementById("box-six").style.backgroundColor = "white";
+document.getElementById("box-seven").style.backgroundColor = "white";
+document.getElementById("box-eight").style.backgroundColor = "white";
+document.getElementById("box-nine").style.backgroundColor = "white";
+token = "X";
+}
+function checkWin()
+{ 
+
+if (document.getElementById("box-one").innerHTML === document.getElementById("box-two").innerHTML && document.getElementById("box-two").innerHTML === document.getElementById("box-three").innerHTML
+&& document.getElementById("box-one").innerHTML !== "")
+{
+document.getElementById("box-one").style.backgroundColor = "yellow";
+document.getElementById("box-two").style.backgroundColor = "yellow";
+document.getElementById("box-three").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (document.getElementById("box-four").innerHTML === document.getElementById("box-five").innerHTML && document.getElementById("box-five").innerHTML === document.getElementById("box-six").innerHTML
+&& document.getElementById("box-four").innerHTML !== "")
+{
+document.getElementById("box-four").style.backgroundColor = "yellow";
+document.getElementById("box-five").style.backgroundColor = "yellow";
+document.getElementById("box-six").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (document.getElementById("box-seven").innerHTML === document.getElementById("box-eight").innerHTML && document.getElementById("box-eight").innerHTML === document.getElementById("box-nine").innerHTML
+&& document.getElementById("box-seven").innerHTML !== "")
+{
+document.getElementById("box-seven").style.backgroundColor = "yellow";
+document.getElementById("box-eight").style.backgroundColor = "yellow";
+document.getElementById("box-nine").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (document.getElementById("box-one").innerHTML === document.getElementById("box-four").innerHTML && document.getElementById("box-four").innerHTML === document.getElementById("box-seven").innerHTML
+&& document.getElementById("box-one").innerHTML !== "")
+{
+document.getElementById("box-one").style.backgroundColor = "yellow";
+document.getElementById("box-four").style.backgroundColor = "yellow";
+document.getElementById("box-seven").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (document.getElementById("box-two").innerHTML === document.getElementById("box-five").innerHTML && document.getElementById("box-five").innerHTML === document.getElementById("box-eight").innerHTML
+&& document.getElementById("box-two").innerHTML !== "")
+{
+document.getElementById("box-two").style.backgroundColor = "yellow";
+document.getElementById("box-five").style.backgroundColor = "yellow";
+document.getElementById("box-eight").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (document.getElementById("box-three").innerHTML === document.getElementById("box-six").innerHTML && document.getElementById("box-six").innerHTML === document.getElementById("box-nine").innerHTML
+&& document.getElementById("box-three").innerHTML !== "")
+{
+document.getElementById("box-three").style.backgroundColor = "yellow";
+document.getElementById("box-six").style.backgroundColor = "yellow";
+document.getElementById("box-nine").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (document.getElementById("box-one").innerHTML === document.getElementById("box-five").innerHTML && document.getElementById("box-five").innerHTML === document.getElementById("box-nine").innerHTML
+&& document.getElementById("box-one").innerHTML !== "")
+{
+document.getElementById("box-one").style.backgroundColor = "yellow";
+document.getElementById("box-five").style.backgroundColor = "yellow";
+document.getElementById("box-nine").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (document.getElementById("box-three").innerHTML === document.getElementById("box-five").innerHTML && document.getElementById("box-five").innerHTML === document.getElementById("box-seven").innerHTML
+&& document.getElementById("box-three").innerHTML !== "")
+{
+document.getElementById("box-three").style.backgroundColor = "yellow";
+document.getElementById("box-five").style.backgroundColor = "yellow";
+document.getElementById("box-seven").style.backgroundColor = "yellow";
+alert("You Win!");
+}
+if (
+document.getElementById("box-one").innerHTML !== "" &&
+document.getElementById("box-two").innerHTML !== "" &&
+document.getElementById("box-three").innerHTML !== "" &&
+document.getElementById("box-four").innerHTML !== "" &&
+document.getElementById("box-five").innerHTML !== "" &&
+document.getElementById("box-six").innerHTML !== "" &&
+document.getElementById("box-seven").innerHTML !== "" &&
+document.getElementById("box-eight").innerHTML !== "" &&
+document.getElementById("box-nine").innerHTML !== "" &&
+document.getElementById("box-one").style.backgroundColor === "white" &&
+document.getElementById("box-two").style.backgroundColor === "white" &&
+document.getElementById("box-three").style.backgroundColor === "white" &&
+document.getElementById("box-four").style.backgroundColor === "white" &&
+document.getElementById("box-five").style.backgroundColor === "white" &&
+document.getElementById("box-six").style.backgroundColor === "white" &&
+document.getElementById("box-seven").style.backgroundColor === "white" &&
+document.getElementById("box-eight").style.backgroundColor === "white" &&
+document.getElementById("box-nine").style.backgroundColor === "white"
+)
+{
+alert("It's a draw!");
+}
+}
+</script>
+<link rel="stylesheet" href="C:/Users/Summer Fun/Desktop/Amal/Programs/style.css">
+<style>
+td 
+{
+border: solid 1px black;
+width: 200px;
+height: 200px;
+}
+.big
+{
+font-size: 150px;
+}
+</style>
+</head>
+<body>
+<table class="center">
+<tr>
+<td onclick="addToken('box-one')" id="box-one"></td>
+<td onclick="addToken('box-two')" id="box-two"></td>
+<td onclick="addToken('box-three')" id="box-three"></td>
+</tr>
+<tr>
+<td onclick="addToken('box-four')" id="box-four"></td>
+<td onclick="addToken('box-five')" id="box-five"></td>
+<td onclick="addToken('box-six')" id="box-six"></td>
+</tr>
+<tr>
+<td onclick="addToken('box-seven')" id="box-seven"></td>
+<td onclick="addToken('box-eight')" id="box-eight"></td>
+<td onclick="addToken('box-nine')" id="box-nine"></td>
+</tr>
+</table>
+<br><button onclick="reset()">Play Again</button>
+<br><noscript>Please enable JavaScript for full functionality</noscript>
+</body>
+</html>
